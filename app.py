@@ -57,11 +57,10 @@ if st.button("Summarize the Content from YT or Website"):
         try:
             with st.spinner("Fetching and summarizing content..."):
 
-                llm = ChatGroq(
-                    model="gemma2-9b-it",
-                    groq_api_key=groq_api_key
-                )
-
+               llm = ChatGroq(
+                     model="llama-3.1-8b-instant",
+                     groq_api_key=groq_api_key
+               )
                 # Load documents
                 if "youtube.com" in generic_url or "youtu.be" in generic_url:
                     loader = YoutubeLoader.from_youtube_url(
